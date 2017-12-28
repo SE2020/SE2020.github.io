@@ -16,7 +16,8 @@ html, body {
   padding: 0;
   margin: 0;
   border: 0;
-  font: 300 100%/1.5 'Roboto Condensed', 'Helvetica', sans-serif;
+  background: #f8f8f8;
+  font: 300 100%/1.5 'Roboto', 'Helvetica', sans-serif;
   word-wrap: break-word;
   vertical-align: baseline;
 }
@@ -26,25 +27,37 @@ html, body {
   font-weight: 300;
   margin: 0.25em;
   padding: 0;
+  font-family: 'Roboto Condensed', 'Roboto', sans-serif;
 }
 
 .profile-list {
-  width: 95%;
+  width: 97.5vw;
   margin: 2em auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: auto;
   grid-template-rows: auto;
   grid-gap: 1rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .profile-card {
   width: 100%;
   height: 100%;
+  padding: 0.5rem;
   display: flex;
   flex-flow: row nowrap;
   align-content: center;
   align-items: center;
-  box-shadow: 0 0 4px 1px rgba(#B1B1B1, 0.5);
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(14,30,37,.12);
+  border-radius: 4px;
 }
 
 .profile-card__content {
@@ -62,7 +75,6 @@ html, body {
 }
 
 .profile-card__tagline {
-  max-height: 3rem;
   font-size: 1rem;
   line-height: 1.25;
   font-weight: 300;
@@ -73,8 +85,6 @@ html, body {
 .profile-card__img {
   width: 6.25rem;
   height: 6.25rem;
-  background-position: top center;
-  background-size: cover;
   border-radius: 50%;
   margin: 1rem;
 }

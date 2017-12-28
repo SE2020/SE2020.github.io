@@ -13,7 +13,7 @@
 		<meta name="description" content="The official website for SE 2020.">
 		<meta name="author" content="SEXX">
 		<meta name="keywords" content="software,engineering,se,uw,uwaterloo,waterloo">
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400bold" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400bold|Roboto:300,400,400bold" rel="stylesheet">
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<link href="style.css" rel="stylesheet">
 	</head>
@@ -24,7 +24,7 @@
 			{% assign sorted_profiles = site.data.profiles | sort: "name" %}
 			{% for profile in sorted_profiles %}
 			<article class="profile-card">
-				<div class="profile-card__img" style="background-image: url('{% if profile.img %}/static/{{ profile.img }}{% else %}/static/goose.jpg{% endif %}')"></div>
+				<img class="profile-card__img" src="{% if profile.img %}/static/{{ profile.img }}{% else %}/static/goose.jpg{% endif %}" alt="Profile image of {{ profile.name }}.">
 				<div class="profile-card__content">
 					<h1 class="profile-card__title">{{ profile.name }}</h1>
 					<h2 class="profile-card__tagline">{{ profile.tagline }}</h2>
